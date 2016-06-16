@@ -1,0 +1,32 @@
+---
+title: "00-Orientation"
+author: "DTK"
+date: "June 16, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Welcome to 
+
+For DataCamp folks:
+
+- Computer savvy
+- Often have some previous experience, for instance haven taken a statistics course in high school or college.
+
+Even if you've had a statistics course, if you're like most students you've forgotten a lot or you're not sure that you understood the topic adequately.
+
+The point of this course is to describe a statistical way of thinking. No reason you should know what that means at this point.
+
+The course will not at all be like a high-school or college course. Why not? We can use computation in a sophisticated way. The conventional stats course taught today and over the last 25 years doesn't use computing in any serious way. By using computing we can simplify and generalize: make statistical concepts clearer.
+
+Painting vs Photographty
+
+* Painting
+    - gesso vs oil vs watercolor
+    - perspective
+* Photography
+    - need equipment
+    - not the start of historical development.
