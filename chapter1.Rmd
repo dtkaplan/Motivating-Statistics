@@ -53,7 +53,7 @@ test_function("gf_boxplot", args = c("formula", "data"),
 success_msg("")
 ```
 
---- type:NormalExercise lang:r xp:100 skills:1 
+--- type:NormalExercise lang:r xp:100 skills:1  key:3c78137660
 
 ## Modeling swim times I
 
