@@ -8,7 +8,7 @@ attachments :
 --- type:NormalExercise lang:r xp:100 skills:1
 ## Descriptive graphics
 
-Here is a display constructed using the Current Population Survey wage data:
+Here is a display constructed using the Current Population Survey wage data, `CPS85`:
 
 *** =pre_exercise_code
 ```{r}
