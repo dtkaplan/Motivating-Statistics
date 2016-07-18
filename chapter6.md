@@ -6,7 +6,7 @@ attachments :
 ---
 
 --- type:NormalExercise lang:r xp:100 skills:1 key:24508ccae0
-## Descriptive graphics
+## Descriptive graphics (should go in an earlier chapter.)
 
 Here is a display constructed using the Current Population Survey wage data, `CPS85`:
 
@@ -30,7 +30,8 @@ gf_boxplot(wage ~ sector + color:sex, data = CPS85)
 
 *** =sample_code
 ```{r}
-plot_mode_fun( formula, data = CPS85)
+# Fill in the ..blanks..
+..plot_mode_fun.. ( ..formula.. , data = CPS85)
 ```
 
 *** =solution
@@ -52,10 +53,52 @@ test_function("gf_boxplot", args = c("formula", "data"),
 success_msg("")
 ```
 
+--- type:NormalExercise lang:r xp:100 skills:1 
 
+## Modeling swim times I
 
+The graphic shows a model of swim times in the `mosaicData::SwimRecords` data.
 
+*** =instructions
+1. Look at the graphic to determine which is the response variable and which are the explanatory variables.
+2. Use the "shape" of the model to determine which model terms have been included.
+3. Build that model.
+4. Use `evaluate_model()` to get some examples of model inputs and outputs. By comparing these to the graph you can see if you built the right model.
 
+*** =pre_exercise_code
+```{r}
+library(statisticalModeling)
+library(ggplot2)
+data(SwimRecords, package = "mosaicData")
+.mod <- lm(time ~ sex + I(0*year), data = SwimRecords)
+fmodel(.mod, ~ year + sex) + geom_point(data = SwimRecords, aes(x = year, y = time, color = sex))
+```
+
+*** =solution
+```{r}
+# Build the model
+my_model <- lm(time ~ sex, data = SwimRecords)
+
+# Get some examples of model inputs/outputs 
+# and compare to the graph
+evaluate_model(my_model)
+```
+
+*** =sample_code
+```{r}
+# Build the model
+my_model <- lm(.___, data = SwimRecords)
+
+# Get some examples of model inputs/outputs 
+# and compare to the graph
+evaluate_model(my_model)
+```
+
+*** =sct
+```{r}
+# Final message the student will see upon completing the exercise
+success_msg("The model has just sex as an explanatory variable, which is why the lines on the graph are constant for all years.")
+```
 --- type:NormalExercise lang:r xp:100 skills:1  key:cbf276cdce
 ## Graphing Models with fmodel()
 
