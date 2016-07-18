@@ -1,8 +1,59 @@
 ---
-title       : Home-brew Exercises
-description : Insert the chapter description here
+title       : "A Fresh Approach" Chapter 6
+description : Computing Exercises
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
+
+
+--- type:NormalExercise lang:r xp:100 skills:1
+##
+
+Here is a display constructed using the Current Population Survey wage data:
+
+*** =pre_exercise_code
+```{r}
+library(statisticalModeling)
+data(CPS85, package = "mosaicData")
+gf_boxplot(wage ~ sector + color:sex, data = CPS85)
+```
+
+*** =instructions
+1. Determine what mode of graphic this is, e.g. 
+    - a scatterplot? `gf_point()`
+    - a densityplot? `gf_density()`
+    - a box-and-whiskers plot? `gf_boxplot()`
+2. Read the graphic to determine which variable is playing which role: 
+    - x-axis 
+    - y-axis 
+    - color
+3. Construct a command that re-creates the graphic.
+
+*** =sample_code
+```{r}
+plot_mode_fun( formula, data = CPS85)
+```
+
+*** =solution
+```{r}
+gf_boxplot(wage ~ sector + color:sex, data = CPS85)
+```
+
+*** =hint
+- It's a box-and-whisker plot.
+- `wage` is on the y-axis.
+- `sector` is on the x-axis.
+- `sex` is shown by color.
+
+*** = sct
+```{r}
+test_function("gf_boxplot", args = c("formula", "data"), 
+              not_called_msg = "It should be a box-and-whiskers plot (`gf_boxplot()`)",
+              incorrect_msg = "The arguments should be a formula and `data = CPS85`.")
+success_msg("")
+```
+
+
+
 
 
 --- type:NormalExercise lang:r xp:100 skills:1  key:cbf276cdce
@@ -20,6 +71,7 @@ Once you have built the model, you can graph it. The plot shows one such graph.
 
 *** =instructions
 Create a graphics using `fmodel()` that depict `mod1` in each of two ways
+
 - age on the x-axis and sex as color
 - sex on the x-axis and age as color
 
