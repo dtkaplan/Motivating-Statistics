@@ -4,6 +4,72 @@ description : Insert the chapter description here
 attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
+
+--- type:NormalExercise lang:r xp:100 skills:1 
+## Graphing Models with fmodel()
+
+Given data and a model design, the computer will find the model function and model values for you.  As an example, consider the Current Population Survey  data `mosaicData::CPS85`.  Suppose you want to build a model with `wage` as a response variable and `age` and `sex` as explanatory variables incorporated as main terms.
+
+The two arguments to `lm()` are:
+
+#. the model design, expressed as a formula: `wage` ~ `age` + `sex`.
+#. the data to be used: `data = CPS85` 
+
+Once you have built the model, you can graph it.
+
+
+*** =instructions
+- Create a graphics using `fmodel()` that depict `mod1` in each of two ways
+    - ` ~ age + sex`
+    - ` ~ sex + age`
+
+*** =hint
+ The two arguments to `fmodel()` are
+
+1. The model object itself, in this case `mod1`.
+2. A formula describing which roles the explanatory variable will play in the plot, e.g. `~ age + sex` or `~ sex + age`.
+
+*** =pre_exercise_code
+```{r}
+library(statisticalModeling)
+data(CPS85, package = "mosaicData")
+mod1 <- lm( wage ~ 1 + age + sex, data = CPS85)
+fmodel(mod1)
+```
+
+*** =sample_code
+```{r}
+# Construct the model
+mod1 <- lm( wage ~ 1 + age + sex, data = CPS85)
+
+# Make a graphic of mod1 with age on the x-axis and sex as color.
+
+
+# Make another graphic, reversing the roles of age and sex.
+
+
+```
+
+*** =solution
+# Construct the model
+mod1 <- lm( wage ~ 1 + age + sex, data = CPS85)
+
+# Make a graphic of mod1 with age on the x-axis and sex as color.
+fmodel(mod1, ~ age + sex)
+
+# Make another graphic, reversing the roles of age and sex.
+fmodel(mod1, ~ sex + age)
+```{r}
+
+```
+
+*** =sct
+```{r}
+
+# Final message the student will see upon completing the exercise
+success_msg("Which graph do you find easier to interpret?")
+```
+
 --- type:VideoExercise lang:r xp:50 skills:1 key:5d57bef9f4
 ## Analyze movie ratings
 
