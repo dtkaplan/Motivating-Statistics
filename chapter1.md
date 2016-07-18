@@ -19,9 +19,9 @@ Once you have built the model, you can graph it. The plot shows one such graph.
 
 
 *** =instructions
-- Create a graphics using `fmodel()` that depict `mod1` in each of two ways
-    - ` ~ age + sex`
-    - ` ~ sex + age`
+Create a graphics using `fmodel()` that depict `mod1` in each of two ways
+- age on the x-axis and sex as color
+- sex on the x-axis and age as color
 
 *** =hint
 The two arguments to `fmodel()` are
