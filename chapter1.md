@@ -12,10 +12,10 @@ Given data and a model design, the computer will find the model function and mod
 
 The two arguments to `lm()` are:
 
-#. the model design, expressed as a formula: `wage` ~ `age` + `sex`.
-#. the data to be used: `data = CPS85` 
+1. the model design, expressed as a formula: `wage` ~ `age` + `sex`.
+2. the data to be used: `data = CPS85` 
 
-Once you have built the model, you can graph it.
+Once you have built the model, you can graph it. The plot shows one such graph.
 
 
 *** =instructions
@@ -24,7 +24,7 @@ Once you have built the model, you can graph it.
     - ` ~ sex + age`
 
 *** =hint
- The two arguments to `fmodel()` are
+The two arguments to `fmodel()` are
 
 1. The model object itself, in this case `mod1`.
 2. A formula describing which roles the explanatory variable will play in the plot, e.g. `~ age + sex` or `~ sex + age`.
@@ -43,10 +43,10 @@ fmodel(mod1)
 mod1 <- lm( wage ~ 1 + age + sex, data = CPS85)
 
 # Make a graphic of mod1 with age on the x-axis and sex as color.
-
+fmodel(mod1, ~ .___ + .___)
 
 # Make another graphic, reversing the roles of age and sex.
-
+fmodel(.___, .___)
 
 ```
 
