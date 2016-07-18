@@ -5,7 +5,7 @@ attachments :
   slides_link : https://s3.amazonaws.com/assets.datacamp.com/course/teach/slides_example.pdf
 
 
---- type:NormalExercise lang:r xp:100 skills:1 
+--- type:NormalExercise lang:r xp:100 skills:1  key:cbf276cdce
 ## Graphing Models with fmodel()
 
 Given data and a model design, the computer will find the model function and model values for you.  As an example, consider the Current Population Survey  data `mosaicData::CPS85`.  Suppose you want to build a model with `wage` as a response variable and `age` and `sex` as explanatory variables incorporated as main terms.
